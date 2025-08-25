@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.template.MainActivity
 import com.example.template.R
 import com.example.template.databinding.FragmentAppIntroBinding
 import com.example.template.ui.adapter.IntroAdapter
@@ -14,9 +15,9 @@ import com.example.template.ui.adapter.IntroAdapter
 class AppIntroFragment : Fragment() {
     private lateinit var binding: FragmentAppIntroBinding
     private val introPages = listOf(
-        IntroSlideData("Book Venue", "Showcase your turf with photos, rates, time slots, and more.", R.drawable.football_player_gif),
-        IntroSlideData("Real Time Availability ", "You control when your venue is available — weekdays, weekends, hourly, or closed days.", R.drawable.balling_gif),
-        IntroSlideData("Book Personal Trainer", "Boost your revenue with racket rentals, coaching, drinks & more.R", R.drawable.football_keepering_gig)
+        IntroSlideData("Hello", "Showcase your turf with photos, rates, time slots, and more.", R.drawable.girl_shopping),
+        IntroSlideData("Ready ", "You control when your venue is available — weekdays, weekends, hourly, or closed days.", R.drawable.girl_shopping),
+        IntroSlideData("Lets explore", "Boost your revenue with racket rentals, coaching, drinks & more.R", R.drawable.girl_shopping)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,20 +37,21 @@ class AppIntroFragment : Fragment() {
     }
 
     private fun initViews() {
-        val adapter = IntroAdapter(introPages, requireActivity())
+        val adapter = IntroAdapter(
+            introPages,
+            requireActivity(),
+            itemClick = {
+                launchMain()
+            }
+        )
         binding.viewPager.adapter = adapter
         // Setup TabLayout with ViewPager2
         binding.dotsIndicator.setViewPager2(binding.viewPager)
- /*       binding.btnNext.setOnClickListener {
-            if (binding.viewPager.currentItem < introPages.lastIndex) {
-                binding.viewPager.currentItem += 1
-            } else {
-                launchMain()
-            }
-        }
 
-        binding.btnSkip.setOnClickListener {
-            launchMain()
-        }*/
+    }
+    private fun launchMain(){
+        val intent = Intent(requireActivity(), MainActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
 }

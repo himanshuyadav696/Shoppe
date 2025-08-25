@@ -24,7 +24,9 @@ class WalkThroughActivity : AppCompatActivity() {
         }
 
         private fun initViews() {
-            val adapter = IntroAdapter(introPages, this)
+            val adapter = IntroAdapter(introPages, this, itemClick = {
+                
+            })
             binding.viewPager.adapter = adapter
             // Setup TabLayout with ViewPager2
             binding.dotsIndicator.setViewPager2(binding.viewPager)

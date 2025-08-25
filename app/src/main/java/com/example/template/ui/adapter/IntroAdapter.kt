@@ -11,7 +11,8 @@ import com.example.template.databinding.ItemIntroPageLayoutBinding
 
 class IntroAdapter(
     private val introList: List<IntroSlideData>,
-    private var context: Context
+    private var context: Context,
+    private var itemClick: () -> Unit
 ) :
     RecyclerView.Adapter<IntroAdapter.IntroViewHolder>() {
 
@@ -29,6 +30,9 @@ class IntroAdapter(
                 binding.btnDone.visibility = View.VISIBLE
             }else{
                 binding.btnDone.visibility = View.GONE
+            }
+            binding.btnDone.setOnClickListener {
+                itemClick()
             }
         }
     }
