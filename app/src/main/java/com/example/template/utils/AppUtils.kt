@@ -7,6 +7,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
 import android.text.Spannable
@@ -20,8 +21,11 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import com.example.template.MainActivity
 import com.example.template.R
 import org.json.JSONArray
@@ -301,6 +305,20 @@ object AppUtils {
         } catch (e: Exception) {
             time12
         }
+    }
+
+    fun NavController.navigateWithAnim(
+        @IdRes destinationId: Int,
+        args: Bundle? = null
+    ) {
+        val options = NavOptions.Builder()
+            .setEnterAnim(R.anim.slide_in_right)
+            .setExitAnim(R.anim.slide_out_left)
+            .setPopEnterAnim(R.anim.slide_in_left)
+            .setPopExitAnim(R.anim.slide_out_right)
+            .build()
+
+        this.navigate(destinationId, args, options)
     }
 
 }

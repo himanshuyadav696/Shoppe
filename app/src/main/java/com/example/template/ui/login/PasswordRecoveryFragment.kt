@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.template.R
 import com.example.template.databinding.FragmentPasswordRecoveryBinding
+import com.example.template.utils.AppUtils.navigateWithAnim
 
 class PasswordRecoveryFragment : Fragment() {
     private lateinit var binding: FragmentPasswordRecoveryBinding
@@ -32,7 +33,7 @@ class PasswordRecoveryFragment : Fragment() {
     private fun initViews() {
         selectOption("sms")
         binding.btnDone.setOnClickListener {
-            findNavController().navigate(R.id.enterPasswordRecoveryFragment)
+            findNavController().navigateWithAnim(R.id.enterPasswordRecoveryFragment)
         }
         binding.clSms.setOnClickListener {
             selectOption("sms")

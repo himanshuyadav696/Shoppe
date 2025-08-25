@@ -32,6 +32,7 @@ class SplashActivity : AppCompatActivity(){
                 val intent = Intent(this, SignInActivity::class.java)
                 intent.putExtra("purpose","register")
                 startActivity(intent)
+               // overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
             }
             binding.tvLogin.setOnClickListener {
                 val intent = Intent(this, SignInActivity::class.java)

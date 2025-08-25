@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.template.R
 import com.example.template.databinding.FragmentTypePasswordBinding
 import com.example.template.utils.AppUtils
+import com.example.template.utils.AppUtils.navigateWithAnim
 
 class TypePasswordFragment : Fragment() {
     private lateinit var binding: FragmentTypePasswordBinding
@@ -30,7 +31,7 @@ class TypePasswordFragment : Fragment() {
 
     private fun initViews() {
         binding.tvForgot.setOnClickListener {
-            findNavController().navigate(R.id.passwordRecoveryFragment)
+            findNavController().navigateWithAnim(R.id.passwordRecoveryFragment)
         }
         AppUtils.setupHideKeyboardOnTouch(binding.root,requireActivity())
     }

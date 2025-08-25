@@ -20,12 +20,6 @@ class MainActivity : AppCompatActivity() {
     private var backPressedTime: Long = 0
     private lateinit var toast: Toast
 
-
-    /*override fun getLayoutId(): Int {
-        return R.layout.activity_main
-
-    }
-*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
@@ -36,9 +30,6 @@ class MainActivity : AppCompatActivity() {
         handleActivityBackButton()
         navigationMenuClickListener()
         setupBottomNavVisibility()
-
-        //applyBottomInsetToBottomNav()
-       //setBottomBarPadding() // ← Add this
 
     }
 

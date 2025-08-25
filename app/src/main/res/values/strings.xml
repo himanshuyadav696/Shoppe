@@ -179,6 +179,9 @@
     <string name="passowrd_recovery">Passowrd Recovery</string>
     <string name="_918800_2">+918800****2</string>
     <string name="setup_new_password">Setup new password</string>
+    <string name="announcement">Announcement</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_maecenas_hendrerit_luctus_libero_ac_vulputate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit luctus libero ac vulputate.</string>
+    <string name="my_activity">My Activity</string>
 </resources>
 
 

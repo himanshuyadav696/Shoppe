@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardUserImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:strokeColor="@color/white"
+            android:elevation="5dp"
+            app:cardCornerRadius="@dimen/fifteen"
+            app:strokeWidth="@dimen/four_dp"
+            android:layout_marginVertical="@dimen/four_dp"
+            android:layout_marginStart="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/ten"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/girl_shopping" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Shirt,Pink Color"
+            android:maxLines="2"
+            android:fontFamily="@font/raleway_regular"
+            android:textSize="@dimen/twelve_sp"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/cardUserImage"
+            app:layout_constraintStart_toStartOf="@id/cardUserImage"
+            app:layout_constraintTop_toBottomOf="@id/cardUserImage"/>
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="$17,00"
+            android:maxLines="2"
+            android:fontFamily="@font/raleway_bold"
+            android:textSize="@dimen/sixteen_sp"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

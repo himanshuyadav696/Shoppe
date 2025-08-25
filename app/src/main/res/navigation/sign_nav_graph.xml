@@ -25,6 +25,7 @@
         android:name="com.example.template.ui.login.TypePasswordFragment"
         android:label="TypePasswordFragment"
         tools:layout="@layout/fragment_type_password"/>
+
     <fragment
         android:id="@+id/passwordRecoveryFragment"
         android:name="com.example.template.ui.login.PasswordRecoveryFragment"
@@ -45,4 +46,9 @@
         android:name="com.example.template.ui.login.AppIntroFragment"
         android:label="AppIntroFragment"
         tools:layout="@layout/fragment_app_intro"/>
+    <dialog
+        android:id="@+id/otpMaxAttemptFragment"
+        android:label="fragment_otp_max_attempt"
+        android:name="com.example.template.ui.login.OtpMaxAttemptFragment"
+        tools:layout="@layout/fragment_otp_max_attempt" />
 </navigation>

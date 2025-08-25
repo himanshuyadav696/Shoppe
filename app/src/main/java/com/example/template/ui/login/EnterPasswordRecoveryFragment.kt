@@ -13,8 +13,10 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.template.R
 import com.example.template.databinding.FragmentEnterPasswordRecoveryBinding
+import com.example.template.utils.AppUtils.navigateWithAnim
 
 class EnterPasswordRecoveryFragment : Fragment() {
+    private var btnDoneClick = 0
     private lateinit var binding: FragmentEnterPasswordRecoveryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +36,12 @@ class EnterPasswordRecoveryFragment : Fragment() {
 
     private fun initViews() {
         setupOtpInputs()
+        binding.btnDone.setOnClickListener {
+            findNavController().navigate(R.id.otpMaxAttemptFragment)
+        }
+        binding.tvCancel.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun setupOtpInputs() {
@@ -51,7 +59,8 @@ class EnterPasswordRecoveryFragment : Fragment() {
                         } else {
                             // All filled → Collect OTP
                             val otp = editTexts.joinToString("") { it.text.toString() }
-                            findNavController().navigate(R.id.setupNewPasswordFragment)
+                            findNavController().navigateWithAnim(R.id.setupNewPasswordFragment)
+                            clearOtpInputs()
                             //Toast.makeText(requireActivity(), "OTP: $otp", Toast.LENGTH_SHORT).show()
                         }
                     } else {
@@ -75,6 +84,17 @@ class EnterPasswordRecoveryFragment : Fragment() {
             }
         }
         editTexts[0].requestFocus()
+    }
+
+
+    private fun clearOtpInputs() {
+        val editTexts = listOf(binding.pin1, binding.pin2, binding.pin3, binding.pin4)
+        for (et in editTexts) {
+            et.text = null
+            et.background = ContextCompat.getDrawable(requireActivity(), R.drawable.circle_bg)
+            et.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+        }
+        binding.pin1.requestFocus()
     }
 
 

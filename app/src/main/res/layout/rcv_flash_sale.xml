@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ten">
+
+        <!-- User Image Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardUserImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/four_dp"
+            android:layout_marginVertical="@dimen/four_dp"
+            android:layout_marginEnd="@dimen/ten"
+            android:elevation="5dp"
+            app:cardCornerRadius="@dimen/fifteen"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/four_dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/girl_shopping" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Discount Badge -->
+        <TextView
+            android:id="@+id/tvDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@drawable/grey_outline"
+            android:elevation="6dp"
+            android:backgroundTint="#FF5790"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingHorizontal="@dimen/ten"
+            android:paddingVertical="2dp"
+            android:text="-30%"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/cardUserImage"
+            app:layout_constraintTop_toTopOf="@id/cardUserImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

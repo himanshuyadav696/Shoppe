@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.template.R
 import com.example.template.databinding.FragmentSetupNewPasswordBinding
+import com.example.template.utils.AppUtils.navigateWithAnim
 
 class SetupNewPasswordFragment : Fragment() {
     private lateinit var binding: FragmentSetupNewPasswordBinding
@@ -29,7 +30,7 @@ class SetupNewPasswordFragment : Fragment() {
 
     private fun initViews() {
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.appIntroFragment)
+            findNavController().navigateWithAnim(R.id.appIntroFragment)
         }
     }
 
