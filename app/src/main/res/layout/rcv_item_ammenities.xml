@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- Add variables here if using data binding -->
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten">
+
+        <!-- Start Icon -->
+        <ImageView
+            android:id="@+id/iconStart"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_dropplet"
+            android:contentDescription="Icon"
+            android:layout_marginEnd="@dimen/fifteen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Center Text -->
+        <TextView
+            android:id="@+id/itemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Text"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/ten"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/iconStart"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- End Cross Icon -->
+        <ImageView
+            android:id="@+id/iconClose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/iv_close"
+            android:layout_marginStart="@dimen/ten"
+            android:contentDescription="Close"
+            app:layout_constraintBottom_toBottomOf="@id/itemText"
+            app:layout_constraintTop_toTopOf="@id/itemText"
+            app:layout_constraintStart_toEndOf="@id/itemText"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

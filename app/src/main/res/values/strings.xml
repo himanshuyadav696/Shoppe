@@ -1,0 +1,184 @@
+<resources>
+
+    <string-array name="City">
+        <item>City1</item>
+        <item>City1</item>
+        <item>City1</item>
+        <item>City1</item>
+    </string-array>
+
+    <string-array name="Court">
+        <item>Court 1</item>
+        <item>Court 2</item>
+        <item>Court 3</item>
+        <item>Court 4</item>
+    </string-array>
+
+
+    <string-array name="Days">
+        <item>Select a day</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+
+    <string-array name="Sports">
+        <item>Cricket</item>
+        <item>Basketball</item>
+        <item>Badminton</item>
+        <item>Football</item>
+    </string-array>
+    <string name="app_name">TemplateProject</string>
+    <string name="tv_language">Language</string>
+    <string name="choose_your_language">Choose your language</string>
+    <string name="please_select_your_preferred_language">Please select your preferred language</string>
+    <string name="tv_continue">Continue</string>
+    <string name="Continue_with">Continue with</string>
+    <string name="or">or</string>
+    <string name="log_in_with">Login with</string>
+    <string name="by_signing_up_you_agree_with_delight_s_privacy_policy_and_terms_amp_conditions"><![CDATA[By signing up you agree with Pepster\'s \n Privacy Policy and Terms & Conditions]]></string>
+    <string name="otp_sent">OTP sent</string>
+    <string name="enter_valid_otp">Please enter valid OTP</string>
+    <string name="tv_submit">Submit</string>
+    <string name="phone_number">Mobile number</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="didnt_receive_otp">Didn\'t Receive the OTP ?</string>
+    <string name="enter_otp">Enter OTP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_sign_in">Sign In</string>
+    <string name="tv_please_sign_in_to_continue">Please sign in to continue.</string>
+    <string name="tv_mobile_number">Mobile Number</string>
+    <string name="tv_password">Password</string>
+    <string name="password_stars">**********</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or_login_with">or, login with</string>
+    <string name="don_t_have_an_account">Don’t have an account ? Register</string>
+    <string name="register">Register</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="tv_create_account">Create an Account</string>
+    <string name="tv_create_an_account_to_get_all_features">Create an account to get all features.</string>
+    <string name="tv_full_name">Full Name</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_phone_number">Phone Number</string>
+    <string name="tv_confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account? Sign In</string>
+    <string name="tv_otp_verify">Otp Verify</string>
+    <string name="tv_verification">Verification</string>
+    <string name="enter_the_verification_code_we_just_sent_you_on_your_email_phone_number">Enter the verification code we just sent you on your Email/Phone number</string>
+    <string name="old_password">Old Password</string>
+    <string name="verify">Verify</string>
+    <string name="didn_t_recieve_a_code">Did\'nt receive a code? Resend</string>
+    <string name="tv_next">Next</string>
+    <string name="log_in">Login</string>
+    <string name="tv_profile">Profile</string>
+    <string name="tv_i_agree_terms_conditions"><![CDATA[I agree terms & Conditions.]]></string>
+    <string name="add_new_address">+ Add New Address</string>
+    <string name="tv_edit">Edit</string>
+    <string name="tv_deliver_to">Deliver to:</string>
+    <string name="tv_country_or_region">Country or Region</string>
+    <string name="tv_street_address">Street Address</string>
+    <string name="tv_street_address_2_optional">Street Address 2 (Optional)</string>
+    <string name="tv_state">State</string>
+    <string name="tv_city">City</string>
+    <string name="tv_zip_code">Zip Code</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="my_order">My Order</string>
+    <string name="profile">Profile</string>
+    <string name="yes">yes</string>
+    <string name="cancel">cancel</string>
+    <string name="skip">Skip</string>
+    <string name="welcome_let_s_create_your_account">Welcome!\nLet’s create your account</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="umpire_trainer">Umpire/Trainer</string>
+    <string name="venue_owner">Venue Owner</string>
+    <string name="register_as">Register as:</string>
+    <string name="sign_up">Sign up</string>
+    <string name="booking">Booking</string>
+    <string name="venue">Venue</string>
+    <string name="no_data_found">No data found</string>
+    <string name="name">Name</string>
+    <string name="you_have_upcoming_bookings">You have upcoming bookings</string>
+    <string name="venue_name">Venue Name</string>
+    <string name="description">Description</string>
+    <string name="describe_your_venue">Describe your venue</string>
+    <string name="set_location">Set Location</string>
+    <string name="state">State</string>
+    <string name="amenities">Amenities</string>
+    <string name="add_amenities">Add Amenities</string>
+    <string name="save">Save</string>
+    <string name="location">Location</string>
+    <string name="address">Address</string>
+    <string name="near_scottish_high_international_school_block_g_sushant_lok_2_sector_57_gurugram_haryana_122003">Near Scottish High International School, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122003</string>
+    <string name="ground_court_name">Ground/Court Name</string>
+    <string name="enter_ground_court_name">Enter ground/court name</string>
+    <string name="add_slots">Add Slots</string>
+    <string name="add">Add</string>
+    <string name="add_paid_services">Add Paid Services</string>
+    <string name="back_button">back_button</string>
+    <string name="service_name">Service Name</string>
+    <string name="enter_service_name">Enter service name</string>
+    <string name="enter_description">Enter description</string>
+    <string name="price">Price</string>
+    <string name="enter_price">Enter price</string>
+    <string name="service_summary">Service Summary</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="verification">Verification</string>
+    <string name="paid_services">Paid services</string>
+    <string name="search">Search...</string>
+    <string name="select_court">Select Court</string>
+    <string name="select_sport">Select Sport</string>
+    <string name="select_date">Select Date</string>
+    <string name="proceed">Proceed</string>
+    <string name="by_selecting_the_button_below_i_agree_to_the_stadium_rules_cancellation_policy_term_condition_i_also_agree_to_pay_the_total_amount_shown_which_includes_service_fees"><![CDATA[By selecting the button below, I agree to the Stadium Rules, Cancellation Policy, & Term & Condition I also agree to pay the total amount shown which includes Service Fees.]]></string>
+    <string name="you_will_be_redirected_to_your_bank_s_website_it_might_take_a_few_seconds_please_do_not_refresh_the_page_or_click_the_back_or_close_button_of_your_browser">You will be redirected to your bank’s website. it might take a few seconds. Please do not refresh the page or click the “Back” or “Close” Button of your browser</string>
+    <string name="termandconditiondata">A privacy policy is a legal document that explains how an organization collects, uses, and protects user data. It provides transparency to users about how their personal information is  handled and informs them of their rights regarding their data. These policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequences.A privacy policy is a legal document that explains how an organization collects, uses, and protects user data. It provides transparency to users about how their personal information is  handled and informs them of their rights regarding their data. These policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequencesThese policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequences.</string>
+    <string name="privacy_data">A privacy policy is a legal document that explains how an organization collects, uses, and protects user data. It provides transparency to users about how their personal information is  handled and informs them of their rights regarding their data. These policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequences.A privacy policy is a legal document that explains how an organization collects, uses, and protects user data. It provides transparency to users about how their personal information is  handled and informs them of their rights regarding their data. These policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequencesThese policies are often required by law, particularly when an organization  handles personal data, and failure to comply can result in legal  consequences.</string>
+    <string name="notification">Notification</string>
+    <string name="view_venue_details">View Venue Details</string>
+    <string name="lorem_ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="now">Now</string>
+    <string name="booked">Booked</string>
+    <string name="free">Free</string>
+    <string name="hold">Hold</string>
+    <string name="water_bottle">Water Bottle</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="payment_share_floater_htmlwvre">payment/share.floater/htmlwvre</string>
+    <string name="share_link_to_accept_payment">Share link to accept payment</string>
+    <string name="slot_will_be_on_hold_only_for_10_minutes_after_first_payment_please_pay_full_amount_in_10_minutes_to_confirm_booking_nafter_full_payment_link_will_be_automatically_disabled">Slot will be on hold only for 10 minutes after first payment. Please pay full amount in 10 minutes to confirm booking.\nAfter full payment, link will be automatically disabled.</string>
+    <string name="split_with_your_team_members">Split With Your Team Members</string>
+    <string name="pay">Pay</string>
+    <string name="pay_full_amount">Pay Full Amount</string>
+    <string name="payment">Payment</string>
+    <string name="total_amount">Total amount</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="_00_00">₹00.00</string>
+    <string name="received_amount">Received Amount</string>
+    <string name="pending_amount">Pending Amount</string>
+    <string name="profiles">Profile</string>
+    <string name="app_id">1:493964025135:android:ce4ac0abddd6cbea2c55da</string>
+    <string name="default_web_client_id">493964025135-5h2epmp1vpi4hsn433gj1c3uaijnaat0.apps.googleusercontent.com</string>
+    <string name="shoppe">Shoppe</string>
+    <string name="let_s_get_started">Let\'s get started</string>
+    <string name="i_already_have_an_account">I already have an account</string>
+    <string name="create_naccount">Create\nAccount</string>
+    <string name="email">Email</string>
+    <string name="type_your_password">Type your password</string>
+    <string name="hello_romina">Hello, Romina!!</string>
+    <string name="passowrd_recovery">Passowrd Recovery</string>
+    <string name="_918800_2">+918800****2</string>
+    <string name="setup_new_password">Setup new password</string>
+</resources>
+
+

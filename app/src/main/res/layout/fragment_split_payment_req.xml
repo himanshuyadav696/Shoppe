@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.SplitPaymentReqFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/sixteen_dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTittle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Split Payment Request"
+        android:fontFamily="@font/roboto_semibold"
+        android:textSize="@dimen/sixteen_sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintBottom_toBottomOf="@id/ivBack"
+        app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+    android:layout_below="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+        android:layout_above="@+id/btnProceed">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/ten"
+            app:cardElevation="@dimen/_5sdp"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginVertical="10dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tvBookingId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:text="Booking ID: #123546567895"
+                    android:textSize="@dimen/fourteen_sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardUserProfile"
+                    android:layout_width="@dimen/fourty_dp"
+                    android:layout_height="@dimen/fourty_dp"
+                    android:layout_marginTop="@dimen/ten"
+                    app:cardCornerRadius="360dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBookingId">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/walkthrought_one"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:layout_marginHorizontal="@dimen/ten"
+                    app:layout_constraintStart_toEndOf="@id/cardUserProfile"
+                    app:layout_constraintEnd_toStartOf="@id/ivPhone"
+                    app:layout_constraintBottom_toBottomOf="@id/cardUserProfile"
+                    app:layout_constraintTop_toTopOf="@id/cardUserProfile"/>
+
+                <ImageView
+                    android:id="@+id/ivPhone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:src="@drawable/iv_phone_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/cardUserProfile"
+                    app:layout_constraintTop_toTopOf="@id/cardUserProfile"/>
+
+                <ImageView
+                    android:id="@+id/ivPinLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/location_on"
+                    android:layout_marginTop="@dimen/ten"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardUserProfile"/>
+
+                <LinearLayout
+                    android:id="@+id/llLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="@dimen/ten"
+                    app:layout_constraintTop_toTopOf="@id/ivPinLocation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivPinLocation">
+                    <TextView
+                        android:id="@+id/tvSetLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bal Bhavan Cricket Ground"
+                        android:singleLine="true"
+                        android:textSize="@dimen/twelve_sp"
+                        android:fontFamily="@font/roboto_semibold"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvLocationValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sector 12, Dwarka"
+                        android:layout_marginTop="@dimen/three"
+                        android:singleLine="true"
+                        android:textSize="@dimen/ten_sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llImagesContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/ten"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/llLocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <!-- Image Item 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                      <ImageView
+                                android:id="@+id/ivSports"
+                                android:layout_width="@dimen/thirty"
+                                android:layout_height="@dimen/thirty"
+                                android:src="@drawable/sports_cricket"
+                                android:scaleType="centerCrop"
+                                android:gravity="center"
+                                app:layout_constraintStart_toStartOf="parent"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cricket"
+                                android:textSize="@dimen/ten_sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_regular"
+                                app:layout_constraintStart_toStartOf="@id/ivSports"
+                                app:layout_constraintTop_toBottomOf="@id/ivSports">
+                            </TextView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/thirty"
+                            android:layout_height="@dimen/thirty"
+                            android:src="@drawable/calendar_month_green"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sat 18 June 25"
+                            android:textSize="@dimen/ten_sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/roboto_regular"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <ImageView
+                                android:id="@+id/ivTime"
+                                android:layout_width="@dimen/thirty"
+                                android:layout_height="@dimen/thirty"
+                                android:gravity="center"
+                                android:src="@drawable/time_fill_green"
+                                android:scaleType="centerCrop"
+                            />
+
+                            <TextView
+                                android:id="@+id/tvTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="7 AM - 11 AM"
+                                android:textSize="@dimen/ten_sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_regular"
+                                />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPaidServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/paid_services"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textSize="@dimen/twelve_sp"
+                    android:layout_marginTop="@dimen/five_dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llImagesContainer"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvPaidServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/rcv_view_paid_services"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/five_dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvPaidServices"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginBottom="16dp"
+            android:elevation="@dimen/ten"
+            app:cardCornerRadius="12dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_status"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <!-- Items -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/total_amount"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tvPriceValue"
+                        android:text="@string/_00_00"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto_semibold"
+                        android:layout_width="wrap_content"
+                        android:textFontWeight="500"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:alpha="0.2"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/received_amount"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tvRecPriceValue"
+                        android:text="₹00.00"
+                        android:fontFamily="@font/roboto_semibold"
+                        android:layout_width="wrap_content"
+                        android:textFontWeight="500"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:alpha="0.2"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/pending_amount"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tvPenPriceValue"
+                        android:text="₹00.00"
+                        android:fontFamily="@font/roboto_semibold"
+                        android:layout_width="wrap_content"
+                        android:textFontWeight="500"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvContributors"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_contributer_container">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <!-- Contribution Input -->
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Your Contribution"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/red_background_box_rad10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Amount"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textStyle="bold"
+                android:textFontWeight="400"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/white"
+                />
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="₹2000"
+                android:layout_margin="@dimen/_3sdp"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
+                android:background="@drawable/grey_outline"
+                android:padding="20dp"
+                android:textFontWeight="500"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Proceed"
+        app:cornerRadius="@dimen/five_dp"
+        android:textSize="@dimen/sixteen_sp"
+        app:iconSize="@dimen/fifteen"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:iconTint="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:backgroundTint="@color/app_color_second"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/fifteen"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+
+</RelativeLayout>
+</layout>

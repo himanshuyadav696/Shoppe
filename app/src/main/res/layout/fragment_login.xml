@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@drawable/login_background"
+        android:fillViewport="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/llCreateAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="@dimen/twenty_dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:textSize="@dimen/fifty_sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Good to see you back!"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="@dimen/five_dp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="@dimen/twenty_dp"
+                        android:fontFamily="@font/raleway_regular"
+                        android:textSize="@dimen/sixteen_sp"/>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/twenty_dp"
+                    android:layout_marginTop="@dimen/fourty_dp"
+                    android:background="@drawable/grey_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llCreateAccount">
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/email"
+                        android:singleLine="true"
+                        android:inputType="textEmailAddress"
+                        android:layout_marginVertical="@dimen/fifteen"
+                        android:layout_marginHorizontal="@dimen/ten"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/llButtons"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/twenty_dp"
+                android:gravity="center_horizontal|bottom"
+                android:layout_marginHorizontal="@dimen/sixteen_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/twenty_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sixty_dp"
+                    android:text="Done"
+                    android:paddingVertical="@dimen/five_dp"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/twenty_dp"
+                    android:textSize="@dimen/eighteen_sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/raleway_regular"/>
+
+
+                <TextView
+                    android:id="@+id/tvCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:paddingBottom="@dimen/ten"
+                    android:fontFamily="@font/raleway_regular" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</layout>

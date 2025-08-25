@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="19dp"
+    android:height="20dp"
+    android:viewportWidth="19"
+    android:viewportHeight="20">
+
+    <!-- Circle same as before -->
+    <path
+        android:pathData="M9.413,0C4.214,0 0,4.41 0,9.851C0,15.292 4.214,19.702 9.413,19.702C14.612,19.702 18.826,15.292 18.826,9.851C18.826,4.41 14.612,0 9.413,0Z"
+        android:fillColor="#FC0F47" />
+
+    <!-- Minus sign only (horizontal line) -->
+    <path
+        android:pathData="M5,9.5H13"
+        android:strokeColor="@color/white"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
+</vector>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/five_dp"
+        android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="@dimen/eight_dp"
+        app:cardBackgroundColor="@color/green_accent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/five_dp"
+            android:layout_margin="@dimen/three">
+            <ImageView
+                android:id="@+id/ivPaidServices"
+                android:layout_width="@dimen/twenty_dp"
+                android:layout_height="@dimen/twenty_dp"
+                android:src="@drawable/menu_booking_ball"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvServiceName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="2 Balls"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/five_dp"
+                app:layout_constraintStart_toEndOf="@id/ivPaidServices"
+                app:layout_constraintBottom_toBottomOf="@id/ivPaidServices"
+                app:layout_constraintTop_toTopOf="@id/ivPaidServices"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

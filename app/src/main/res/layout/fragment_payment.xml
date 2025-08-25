@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.PaymentFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/payment"
+                android:fontFamily="@font/roboto_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="@id/ivBack"
+                app:layout_constraintBottom_toBottomOf="@id/ivBack" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            app:layout_constraintTop_toBottomOf="@+id/clToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingStart="@dimen/_15sdp"
+            android:scrollbars="none"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/payment_progress" />
+                </LinearLayout>
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pay_full_amount"
+                    android:textSize="24sp"
+                    android:textFontWeight="500"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textColor="#000000"
+                    android:layout_gravity="center_horizontal" />
+
+                <!-- Amount -->
+                <TextView
+                    android:id="@+id/payFullAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹00.00"
+                    android:textSize="@dimen/_28sdp"
+                    android:textStyle="bold"
+                    android:textColor="#666666"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/pay"
+                    app:cornerRadius="@dimen/five_dp"
+                    android:textSize="@dimen/sixteen_sp"
+                    app:iconSize="@dimen/fifteen"
+                    app:iconTint="@color/white"
+                    android:fontFamily="@font/roboto_regular"
+                    android:backgroundTint="@color/app_color_second"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <!-- Divider OR -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OR"
+                        android:textColor="#999999"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+
+                </LinearLayout>
+
+                <!-- Split Section -->
+                <TextView
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/split_with_your_team_members"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textColor="#000000"
+                    android:textFontWeight="500"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Info Box -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/light_blue_bg_box"
+                    android:alpha="0.6"
+                    android:text="@string/slot_will_be_on_hold_only_for_10_minutes_after_first_payment_please_pay_full_amount_in_10_minutes_to_confirm_booking_nafter_full_payment_link_will_be_automatically_disabled"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textFontWeight="700"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Share Link -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share_link_to_accept_payment"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textFontWeight="500"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/grey_outline"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tvShareLink"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/payment_share_floater_htmlwvre"
+                        android:textColor="#2196F3"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/ivCopy"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:tint="#2196F3"
+                        android:src="@drawable/copy_icon"
+                        />
+        </LinearLayout>
+
+        <!-- Contribution Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Your Contribution"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etContribution"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:hint="₹1000"
+            android:background="@drawable/grey_outline"
+            android:paddingHorizontal="12dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Proceed"
+                    app:cornerRadius="@dimen/five_dp"
+                    android:textSize="@dimen/sixteen_sp"
+                    app:iconSize="@dimen/fifteen"
+                    app:iconTint="@color/white"
+                    android:fontFamily="@font/roboto_regular"
+                    android:backgroundTint="@color/app_color_second"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:layout_marginBottom="@dimen/_50sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+    </LinearLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

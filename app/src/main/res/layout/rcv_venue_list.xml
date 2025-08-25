@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/ten"
+        android:elevation="5dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fifteen">
+
+            <ImageView
+                android:id="@+id/ivGroundImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/image_ground"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvGroundName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ryders Sports Academy"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                app:layout_constraintEnd_toStartOf="@id/tvRating"
+                app:layout_constraintTop_toBottomOf="@id/ivGroundImage"
+                android:layout_marginStart="@dimen/sixteen_dp"
+                android:fontFamily="@font/roboto_semibold"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.6"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginEnd="@dimen/sixteen_dp"
+                android:fontFamily="@font/roboto_semibold"
+                app:drawableStartCompat="@drawable/ic_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvGroundName"
+                app:layout_constraintTop_toTopOf="@id/tvGroundName"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                app:layout_constraintEnd_toEndOf="@id/tvRating"
+                app:layout_constraintStart_toStartOf="@id/tvGroundName"
+                app:layout_constraintTop_toBottomOf="@id/tvGroundName">
+
+                <!-- Location Icon -->
+                <ImageView
+                    android:id="@+id/ivLocationIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/location_on"
+                    android:layout_marginStart="@dimen/ten"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="4dp" />
+
+                <!-- Location Text -->
+                <TextView
+                    android:id="@+id/tvLocationValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bal Bhavan Cricket Ground"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="14sp"
+                    android:layout_marginStart="@dimen/three"
+                    app:layout_constraintStart_toEndOf="@id/ivLocationIcon"
+                    app:layout_constraintEnd_toStartOf="@id/tvDistance"
+                    app:layout_constraintTop_toTopOf="@id/ivLocationIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/ivLocationIcon" />
+
+                <!-- Distance Text -->
+                <TextView
+                    android:id="@+id/tvDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.2 km"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="@dimen/sixteen_dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvLocationValue"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLocationValue" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+       <!--     <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bal Bhavan Cricket Ground"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginStart="-3dp"
+                app:drawableStartCompat="@drawable/location_on"
+               />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvSports"
+                android:layout_width="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/rcv_nested_sport"
+                android:layout_marginTop="@dimen/five_dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/clLocation"
+                app:layout_constraintTop_toBottomOf="@id/clLocation"
+                app:layout_constraintStart_toStartOf="@id/clLocation"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

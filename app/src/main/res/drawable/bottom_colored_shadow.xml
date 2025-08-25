@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This item will create a colored shadow from bottom -->
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/app_color_second"
+            android:centerColor="@color/colorPrimary"
+            android:endColor="@color/app_color_second"
+            android:angle="270" />
+            <corners android:radius="10dp">
+
+            </corners>
+        </shape>
+    </item>
+
+</layer-list>

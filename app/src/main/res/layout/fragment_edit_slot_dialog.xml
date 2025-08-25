@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- Bindings can be added here -->
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/fifteen">
+        <LinearLayout
+            android:id="@+id/dialogRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ten"
+            android:background="@color/grey_light">
+
+            <!-- Title and Calendar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/eight_dp"
+                android:paddingBottom="@dimen/twelve_dp"
+                android:paddingEnd="@dimen/sixteen_dp">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add Slot: 11-06-2025"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/roboto_semibold"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/calendar_month"
+                    android:contentDescription="@string/select_date" />
+            </LinearLayout>
+
+            <!-- Time Selection -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time:"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/twelve_sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="@dimen/twenty_dp" />
+
+                <TextView
+                    android:id="@+id/tvStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/twelve_dp"
+                    android:paddingHorizontal="@dimen/twelve_sp"
+                    android:hint="04:00 AM"
+                    android:textColorHint="@color/white"
+                    android:backgroundTint="@color/grey"
+                    android:background="@drawable/grey_outline"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - "
+                    android:paddingHorizontal="6dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/tvEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/twelve_dp"
+                    android:paddingHorizontal="@dimen/twelve_sp"
+                    android:hint="07:30 PM"
+                    android:textColorHint="@color/white"
+                    android:backgroundTint="@color/grey"
+                    android:background="@drawable/grey_outline_without_border"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <!-- Rent Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rent:"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/twelve_sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="@dimen/twenty_dp" />
+
+                <EditText
+                    android:id="@+id/etRent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="4000"
+                    android:maxLength="4"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:backgroundTint="@color/grey"
+                    android:paddingVertical="@dimen/ten"
+                    android:paddingHorizontal="@dimen/twenty_four_dp"
+                    android:background="@drawable/grey_outline_without_border"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/fifteen"
+                android:gravity="end">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:text="CANCEL"
+                    android:layout_marginEnd="12dp"
+                    app:cornerRadius="@dimen/ten"
+                    android:textColor="@android:color/black"
+                    android:backgroundTint="#EEEEEE" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:text="YES, I'M SURE"
+                    app:cornerRadius="@dimen/ten"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#F44336" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sixteen_dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Slots"
+                android:fontFamily="@font/roboto_semibold"
+                android:textSize="@dimen/sixteen_sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/sixteen_dp"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="@id/ivBack" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- Scrollable content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/eighty_six"
+            android:layout_above="@id/btnSave"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/clToolbar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/sixteen_dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clStartEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <!-- From Date Block -->
+                    <LinearLayout
+                        android:id="@+id/fromBlock"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/toBlock"
+                        app:layout_constraintWidth_percent="0.5">
+
+                        <TextView
+                            android:id="@+id/tvFrom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:fontFamily="@font/roboto_regular"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/grey_outline"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:id="@+id/startDateText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start date"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/startCalendarIcon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="@dimen/ten"
+                                app:layout_constraintStart_toEndOf="@id/startDateText"
+                                android:src="@drawable/calendar_month"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+
+                    <!-- To Date Block -->
+                    <LinearLayout
+                        android:id="@+id/toBlock"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fromBlock"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="To"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:fontFamily="@font/roboto_regular"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/grey_outline"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:id="@+id/endDateText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="End date"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/endCalendarIcon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="@dimen/ten"
+                                android:src="@drawable/calendar_month"
+                                app:layout_constraintStart_toEndOf="@id/endDateText"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSlots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/clStartEndDate">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:layout_marginTop="@dimen/fifteen"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <TextView
+                            android:id="@+id/tvSelectDayOfWeek"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select day of week"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:fontFamily="@font/roboto_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clDayys"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/tvSelectDayOfWeek"
+                            android:background="@drawable/grey_outline"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/spinDays"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@null"
+                                android:entries="@array/Days"
+                                android:layout_marginEnd="5dp"
+                                app:layout_constraintEnd_toStartOf="@id/ivSpinDayArrow"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"/>
+                            <ImageView
+                                android:id="@+id/ivSpinDayArrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/arrow_down"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/btnAddSlotDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:elevation="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintTop_toBottomOf="@id/clDayys"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRcvDays"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddSlotDays">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rcvDays"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:listitem="@layout/rcv_add_slots" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!-- Repeat Slots Checkboxes -->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMonday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        app:layout_constraintTop_toBottomOf="@id/clDays"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/grey_outline">
+                        <TextView
+                            android:id="@+id/tvSelectMonday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select day of week"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:fontFamily="@font/roboto_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tvMonday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Monday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/tvSelectMonday"/>
+
+
+                        <ImageView
+                            android:id="@+id/btnAddMonday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintTop_toBottomOf="@id/tvMonday"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRcvMonday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddMonday">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rcvMondaySlots"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:listitem="@layout/rcv_add_slots" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!-- Repeat Slots Checkboxes -->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clMonday">
+                        <TextView
+                            android:id="@+id/tvSelectDayOfWeekTuesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select day of week"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:visibility="gone"
+                            android:fontFamily="@font/roboto_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                        <TextView
+                            android:id="@+id/tvTuesDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tuesday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/tvSelectDayOfWeekTuesday"/>
+
+                        <ImageView
+                            android:id="@+id/btnAddTuesDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintTop_toBottomOf="@id/tvTuesDay"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRcvTuesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddTuesDay">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rcvTuesday"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:listitem="@layout/rcv_add_slots" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!-- Repeat Slots Checkboxes -->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clWednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clTuesday">
+
+                        <TextView
+                            android:id="@+id/tvSelectDayOfWeekWednesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select day of week"
+                            android:visibility="gone"
+                            android:textSize="@dimen/fourteen_sp"
+                            android:fontFamily="@font/roboto_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvWednesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wednesday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/tvSelectDayOfWeekWednesday" />
+
+                        <ImageView
+                            android:id="@+id/btnAddWednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvWednesday" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRcvWednesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddWednesday">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rcvWednesday"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:listitem="@layout/rcv_add_slots" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clThursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clWednesday">
+
+                        <TextView
+                            android:id="@+id/tvThursday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Thursday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnAddThursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvThursday" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcvThursday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddThursday"
+                            tools:listitem="@layout/rcv_add_slots" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clFriday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clThursday">
+
+                        <TextView
+                            android:id="@+id/tvFriday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Friday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnAddFriday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFriday" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcvFriday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddFriday"
+                            tools:listitem="@layout/rcv_add_slots" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSaturday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clFriday">
+
+                        <TextView
+                            android:id="@+id/tvSaturday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Saturday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnAddSaturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvSaturday" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcvSaturday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddSaturday"
+                            tools:listitem="@layout/rcv_add_slots" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSunday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ten"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen"
+                        android:background="@drawable/grey_outline"
+                        app:layout_constraintTop_toBottomOf="@id/clSaturday">
+
+                        <TextView
+                            android:id="@+id/tvSunday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sunday"
+                            android:layout_marginTop="@dimen/ten"
+                            android:backgroundTint="@color/grey_light"
+                            android:padding="@dimen/fifteen"
+                            android:background="@drawable/grey_outline"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnAddSunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:src="@drawable/ic_add_slot_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvSunday" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcvSunday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/btnAddSunday"
+                            tools:listitem="@layout/rcv_add_slots" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/dayCheckboxLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/clSlots"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:flexWrap="wrap"
+                    app:justifyContent="flex_start">
+
+                    <CheckBox
+                        android:id="@+id/cbMon"
+                        android:text="Mon"
+                        android:buttonTint="@color/app_color_second"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                    <CheckBox
+                        android:id="@+id/cbTue"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Tue"/>
+                    <CheckBox
+                        android:id="@+id/cbWed"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Wed"/>
+                    <CheckBox
+                        android:id="@+id/cbThu"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Thu"/>
+                    <CheckBox
+                        android:id="@+id/cbFri"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Fri"/>
+                    <CheckBox
+                        android:id="@+id/cbSat"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Sat"/>
+                    <CheckBox
+                        android:id="@+id/cbSun"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:buttonTint="@color/app_color_second"
+                        android:text="Sun"/>
+                </com.google.android.flexbox.FlexboxLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/save"
+            app:cornerRadius="@dimen/five_dp"
+            android:textSize="@dimen/sixteen_sp"
+            android:layout_margin="@dimen/sixteen_dp"
+            android:fontFamily="@font/roboto_regular"
+            android:backgroundTint="@color/app_color_second"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/fifteen"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</layout>

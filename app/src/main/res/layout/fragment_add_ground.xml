@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.dashboard.add_venue.VenueDetailFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sixteen_dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Court/Ground"
+                android:fontFamily="@font/roboto_semibold"
+                android:textSize="@dimen/sixteen_sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="@id/ivBack" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvVenueName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ground_court_name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/etVenueName"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="@string/enter_ground_court_name"
+                    android:singleLine="true"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:maxLength="50"
+                    android:elevation="@dimen/ten"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    android:paddingHorizontal="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:background="@drawable/grey_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/five_dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvVenueName"/>
+
+                <TextView
+                    android:id="@+id/tvSelectSport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Sport"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    android:layout_marginTop="@dimen/fifteen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etVenueName"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="@dimen/ten"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvSelectSport"
+                    android:background="@drawable/grey_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinSport"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@null"
+                        android:entries="@array/Sports"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintEnd_toStartOf="@id/ivStateArrow"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    <ImageView
+                        android:id="@+id/ivStateArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/arrow_down"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddSlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:elevation="@dimen/ten"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/thirty"
+                    app:layout_constraintTop_toBottomOf="@id/clSport"
+                    android:background="@drawable/dashed_outlined_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_slots"
+                        android:drawablePadding="@dimen/ten"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fourteen_sp"
+                        android:fontFamily="@font/roboto_semibold"
+                        app:drawableStartCompat="@drawable/add_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddPaidServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="@dimen/thirty"
+                    android:visibility="gone"
+                    android:elevation="@dimen/ten"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    app:layout_constraintTop_toBottomOf="@id/clAddSlot"
+                    android:background="@drawable/dashed_outlined_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Paid Services"
+                        android:drawablePadding="@dimen/ten"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fourteen_sp"
+                        android:fontFamily="@font/roboto_semibold"
+                        app:drawableStartCompat="@drawable/add_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/fifteen"
+                    app:layout_constraintTop_toBottomOf="@id/clAddPaidServices"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tvSlotDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slot Details"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginHorizontal="@dimen/sixteen_dp"
+                        android:textColor="@android:color/black" />
+
+                    <!-- Button Row -->
+                    <LinearLayout
+                        android:id="@+id/layoutSlotOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:weightSum="3"
+                        android:layout_marginHorizontal="@dimen/sixteen_dp"
+                        android:layout_marginTop="8dp">
+
+                        <!-- Book Slot -->
+                        <LinearLayout
+                            android:id="@+id/llBookSLot"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:elevation="@dimen/ten"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clipToPadding="false"
+                            android:outlineProvider="background"
+                            android:background="@drawable/dashed_outlined_border">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/check_circle" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Book Slot"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <!-- Edit Slots -->
+                        <LinearLayout
+                            android:id="@+id/llEditSlot"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:elevation="@dimen/ten"
+                            android:background="@drawable/dashed_outlined_border">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_edit_grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Edit Slots"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <!-- Add Slots -->
+                        <LinearLayout
+                            android:id="@+id/llAddSlot"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:elevation="@dimen/ten"
+                            android:background="@drawable/dashed_outlined_border">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_eye" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add Slots"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPaidServices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="@dimen/sixteen_dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/fifteen">
+
+                        <TextView
+                            android:id="@+id/tvPaidServices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Paid Services"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcvPaidServices"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/rcv_item_add_paid_services"
+                            app:layout_constraintTop_toBottomOf="@id/tvServiceSummary">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clAdd"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="@dimen/thirty"
+                            app:layout_constraintTop_toBottomOf="@id/etPrice"
+                            android:background="@drawable/dashed_outlined_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/tvAdd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_paid_services"
+                                android:drawablePadding="@dimen/ten"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/fourteen_sp"
+                                android:fontFamily="@font/roboto_semibold"
+                                app:drawableStartCompat="@drawable/add_green"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/save"
+                    app:cornerRadius="@dimen/five_dp"
+                    app:iconPadding="@dimen/ten"
+                    android:layout_marginHorizontal="@dimen/sixteen_dp"
+                    android:textSize="@dimen/sixteen_sp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:backgroundTint="@color/app_color_second"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/fifteen"
+                    app:layout_constraintTop_toBottomOf="@id/llOther"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
